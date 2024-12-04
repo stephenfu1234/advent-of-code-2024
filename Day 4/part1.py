@@ -34,8 +34,7 @@ def solve(filename):
             total += is_xmas(data, row_idx, col_idx, direction[0], direction[1])
 
     print(total)
-    
-    
+        
     end_time = int(time.time() * 1000)
     print(f'Time taken for {filename} (ms): {end_time - start_time}')
 
@@ -59,7 +58,9 @@ def add_border_to_puzzle(data):
         row.append('#')
 
     # add top border
-    data.insert(0, (len(data[0]) + 6) * ['#']) 
+    data.insert(0, len(data[0]) * ['#']) 
+    data.insert(0, len(data[0]) * ['#']) 
+    data.insert(0, len(data[0]) * ['#']) 
 
     # add bottom border
     data.append(data[0])
