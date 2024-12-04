@@ -25,9 +25,8 @@ def solve(filename):
 
     total = 0
 
-    # for each A, scan for XMAS in each direction
+    # for each A, scan for X-MAS pattern
     for row_idx, col_idx in a_locations:
-        # for direction in directions:
         total += is_xmas(data, row_idx, col_idx)
 
     print(total)
