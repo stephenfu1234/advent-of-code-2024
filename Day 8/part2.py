@@ -38,8 +38,7 @@ def solve(filename):
             antinodes.extend(antinodes_2)
 
             # original antennas also become antinodes
-            antinodes.append(antenna_pair[0])
-            antinodes.append(antenna_pair[1])
+            antinodes.extend(antenna_pair)
     
     # print(set(antinodes))
     print(len(set(antinodes)))
