@@ -79,6 +79,7 @@ def find_solutions(game):
     return solutions
 
 # to be a valid game the target must be wholly divisible of greatest common divisor of a and b
+# this calc is actually wrong as it tests the equations independently whereas the equations need to be solved in parallel
 def is_winnable(game):
     for button in game:
         a, b, target = button
