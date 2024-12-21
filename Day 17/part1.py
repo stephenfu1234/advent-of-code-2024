@@ -22,7 +22,6 @@ def solve(filename):
 
     output = []
     pointer = 0
-    is_previous_step_jump = False
     while pointer < len(program):        
         opcode, combo_operand = program[pointer]
         operand = get_operand_value(registers, combo_operand)
@@ -35,10 +34,9 @@ def solve(filename):
         elif opcode == 2:
             registers['B'] = operand % 8
         elif opcode == 3:
-            if registers['A'] != 0 and is_previous_step_jump == False:
+            if registers['A'] != 0:
                 # check if we need to track double jump
                 pointer = operand
-                is_previous_step_jump = True
                 continue
         elif opcode == 4:
             registers['B'] = registers['B'] ^ registers['C']
@@ -50,13 +48,10 @@ def solve(filename):
             registers['C'] = registers['A'] // 2**operand
 
         pointer += 1
-        is_previous_step_jump = False
 
     print('program output',','.join(output))
     print('registers', registers)
-    
-
-        
+       
     end_time = int(time.time() * 1000)
     print(f'Time taken for {filename} (ms): {end_time - start_time}')
 
