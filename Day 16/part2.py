@@ -56,7 +56,7 @@ def solve(filename):
         # if at end location, continue in case we find other optimal paths
         if location == end_location:
             # print('found end location', location, 'travelling', current_direction, 'with current cost', current_cost, 'with path', new_history)
-            all_solution_steps.append((len(set(new_history)), new_history, current_cost))
+            all_solution_steps.append((new_history, current_cost))
             continue
 
         # goto available directions
@@ -95,13 +95,13 @@ def solve(filename):
     print('steps required', steps)
 
     for solution in all_solution_steps:
-        costs.append(solution[2])
+        costs.append(solution[1])
     lowest_cost = min(costs)
 
     best_path_steps = []
     print(len(all_solution_steps), 'solutions found')
     for solution in all_solution_steps:
-        if solution[2] == lowest_cost:
+        if solution[1] == lowest_cost:
             # maze_copy = copy.deepcopy(maze)
             # for r, c in solution[1]:
             #     maze_copy[r][c] = '0'
@@ -110,7 +110,7 @@ def solve(filename):
             #     print(''.join(line))
             # print(solution[2], 'cost', solution[0], 'steps')
             # print()
-            best_path_steps.extend(solution[1])
+            best_path_steps.extend(solution[0])
     
     print(len(set(best_path_steps)), 'steps across best paths')
 
