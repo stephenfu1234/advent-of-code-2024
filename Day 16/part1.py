@@ -77,12 +77,11 @@ def solve(filename):
 
             if maze[r+dr][c+dc] == '.' or maze[r+dr][c+dc] == 'E':
                 # if we have to change direction then add rotate cost
-                new_cost = 0
+                new_cost = current_cost
                 if current_direction != (None, None) and current_direction != new_direction:
-                    new_cost += current_cost + 1000
+                    new_cost += 1000
                     # print('which requires a turn, cost increased from', current_cost, 'to', new_cost)
-                else:
-                    new_cost = current_cost
+
                 
                 # print('adding new location to visit', new_location, 'with direction', new_direction, 'with cost', new_cost)
                 to_visit.append((new_location, new_direction, new_cost, new_history))
