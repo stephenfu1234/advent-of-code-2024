@@ -35,7 +35,6 @@ def solve(filename):
             registers['B'] = operand % 8
         elif opcode == 3:
             if registers['A'] != 0:
-                # check if we need to track double jump
                 pointer = operand
                 continue
         elif opcode == 4:
