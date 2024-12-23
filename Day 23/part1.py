@@ -3,8 +3,6 @@ import time
 def solve(filename):
     start_time = int(time.time() * 1000)
 
-    # for line in open(filename).read().splitlines():
-    #     dir, dist = line.split()
     raw_input = open(filename).read()
 
     # read into a list of lists, split by new line and then by space using list comprension
