@@ -22,7 +22,7 @@ def solve(filename):
             all_computers = connection_groups[c1] + connection_groups[c2] + connection_groups[c3]
             # print(c1, c2, c3)
             # print(all_computers)
-            # there is duplciated detection here so we'll have to check on the sorted set to exclude
+            # there is duplicated detection here so we'll have to check on the sorted set to exclude
             if all([all_computers.count(c1) == 2, all_computers.count(c2) == 2, all_computers.count(c3) == 2]):
                 inscope_computers.add('-'.join(sorted([c1,c2,c3])))
 
