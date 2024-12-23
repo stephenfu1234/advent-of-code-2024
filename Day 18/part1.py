@@ -47,8 +47,8 @@ def find_shortest_path(maze, start, end):
                 print('route taken')
                 draw_maze(maze, new_visited)
                 continue
-                print('finished with lowest cost', seen[end], 'after', iterations, 'iterations')
-                return # for immediate stop
+                # print('finished with lowest cost', seen[end], 'after', iterations, 'iterations')
+                # return # for immediate stop
 
             for dr, dc in directions:
                 if maze[r+dr][c+dc] == '#':
