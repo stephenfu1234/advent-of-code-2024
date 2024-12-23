@@ -30,9 +30,7 @@ def solve(filename):
     #     print(c)
 
     print(len(inscope_computers))
-            
-
-    
+                
     end_time = int(time.time() * 1000)
     print(f'Time taken for {filename} (ms): {end_time - start_time}')
 
