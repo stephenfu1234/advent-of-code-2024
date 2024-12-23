@@ -6,7 +6,7 @@ def solve(filename):
     raw_input = open(filename).read()
 
     # read into a list of lists, split by new line and then by space using list comprension
-    connections = [i.split('-') for i in raw_input.split('\n')] #if i == to apply filtering
+    connections = [i.split('-') for i in raw_input.split('\n')]
 
     connection_groups, starting_computers = get_connection_groups(connections)
     # print(connection_groups)
