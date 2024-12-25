@@ -5,7 +5,6 @@ def solve(filename):
 
     raw_input = open(filename).read()
 
-    # read into a list of lists, split by new line and then by space using list comprension
     schematics = [i.split('\n') for i in raw_input.split('\n\n')]
     
     locks = set()
